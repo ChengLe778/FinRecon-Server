@@ -1,0 +1,30 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# ---- 业务数据 / 运行产物：一律不入库 ----
+# 仓库只放代码。数据库由 scripts/generate_demo_data.py 生成，
+# 真实账套数据请留在本地，切勿提交。
+data/
+logs/
+backup/
+uploads/
+build/
+dist/
+*.exe
+*.db
+*.db-wal
+*.db-shm
+
+# ---- 本地配置 ----
+.env
+
+# ---- 编辑器 / 系统 ----
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

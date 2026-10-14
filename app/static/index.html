@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>应收应付对账系统</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%232563eb'/%3E%3Cpath d='M8 22V10l6-3v15l6-3V7' stroke='%23fff' stroke-width='2.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/vendor/element-plus.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div id="app">
+    <div class="app-shell">
+      <!-- 侧边栏 -->
+      <aside class="app-side">
+        <div class="brand">
+          <div class="brand-logo">对</div>
+          <div class="brand-text">
+            <div class="brand-title">应收应付对账</div>
+            <div class="brand-sub">v1.0 · MVP</div>
+          </div>
+        </div>
+        <nav class="nav">
+          <a v-for="m in menus" :key="m.path"
+             class="nav-item" :class="{active: route === m.path}"
+             @click="go(m.path)">
+            <span class="nav-icon" v-html="m.icon"></span>
+            <span class="nav-label">{{ m.label }}</span>
+          </a>
+        </nav>
+        <div class="side-footer">
+          <div class="db-tag">
+            <span class="dot" :class="dbType"></span>
+            {{ dbLabel }}
+          </div>
+        </div>
+      </aside>
+
+      <!-- 主区 -->
+      <main class="app-main">
+        <header class="app-header">
+          <div class="page-title">{{ currentTitle }}</div>
+          <div class="header-right">
+            <el-tag size="small" type="info" effect="plain">
+              数据截至 {{ today }}
+            </el-tag>
+            <span class="operator">操作人：{{ operator }}</span>
+          </div>
+        </header>
+        <section class="app-content">
+          <component :is="currentComp"></component>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <!-- 依赖：本地 vendor（离线可用） -->
+  <script src="/vendor/vue.global.prod.js"></script>
+  <script src="/vendor/element-plus.min.js"></script>
+  <script src="/vendor/element-plus-zh-cn.min.js"></script>
+  <script src="/vendor/element-plus-icons.min.js"></script>
+  <script src="/vendor/echarts.min.js"></script>
+  <script src="/vendor/axios.min.js"></script>
+
+  <!-- 应用 -->
+  <script src="/js/api.js"></script>
+  <script src="/js/dashboard.js"></script>
+  <script src="/js/import.js"></script>
+  <script src="/js/invoice.js"></script>
+  <script src="/js/txn.js"></script>
+  <script src="/js/reconcile.js"></script>
+  <script src="/js/report.js"></script>
+  <script src="/js/expense.js"></script>
+  <script src="/js/counterparty.js"></script>
+  <script src="/js/logs.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>

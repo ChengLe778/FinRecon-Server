@@ -1,0 +1,15 @@
+# 统一换行：仓库内一律 LF，签出时按平台转换
+* text=auto
+
+# Windows 批处理必须是 CRLF，否则 cmd 解析错乱（双击一闪而过）
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# 二进制 / 前端第三方库：不做任何转换
+*.png binary
+*.jpg binary
+*.ico binary
+*.db binary
+*.xlsx binary
+*.xls binary
+app/static/vendor/* -text
