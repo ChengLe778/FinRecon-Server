@@ -3,6 +3,18 @@
 一套开箱即用的中小企业**应收 / 应付对账**系统：把银行流水和发票导进去，自动核销、差异分诊、出报表。
 后端 FastAPI + SQLAlchemy（SQLite / MySQL 双后端），前端 Vue 3 + Element Plus + ECharts（全部资源离线内置，断网可用）。
 
+## 界面预览
+
+> 以下截图均基于 `scripts/generate_demo_data.py` 生成的**合成演示数据**，不含任何真实主体。
+
+| 总览看板 | 对账工作台 |
+|---|---|
+| ![总览看板](docs/images/dashboard.png) | ![对账工作台](docs/images/reconcile.png) |
+
+| 报表分析 | 发票管理 |
+|---|---|
+| ![报表分析](docs/images/report.png) | ![发票管理](docs/images/invoice.png) |
+
 ---
 
 ## 数据脱敏声明

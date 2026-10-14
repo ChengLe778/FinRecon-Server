@@ -28,3 +28,6 @@ dist/
 .idea/
 .DS_Store
 Thumbs.db
+
+# 本地截图临时目录
+shots/
